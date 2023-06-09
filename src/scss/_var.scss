@@ -1,0 +1,21 @@
+%icon{
+	font-family: 'Material Icons';
+	font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+}
+
+%center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+:root{
+	--button-border-radius: 6.5px;
+	--main-color: white;
+	--main-bg: black;
+	--light-accent: rgba( 0 0 0 / 5%);
+	--mid-accent: rgba( 0 0 0 / 10%);
+	--dark-accent: rgba( 0 0 0 / 20%);
+
+}

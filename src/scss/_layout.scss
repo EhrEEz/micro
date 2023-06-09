@@ -1,0 +1,126 @@
+@use "./var" as *;
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body{
+	background-color: var(--main-bg);
+	color: var(--main-color);
+	font-family: 'Spline Sans', sans-serif;
+}
+.hero{
+	&__section{
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+	}
+	&__text{
+		&--wrapper{
+			position: absolute;
+			inset: 0;
+			height: 100%;
+			width: 100%;
+			padding: 0.5em;
+
+		}
+	}
+	&__bg{
+		width: 100%;
+		height: 100%;
+
+		video, img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity:1
+		}
+	}
+	&--title{
+		 .larger{
+			font-size: clamp(10rem, 12vw, 20rem);
+			line-height: 0.9;
+			display: block;
+		 }
+	}
+	&--sub{
+		align-self: center;
+		justify-self: flex-end;
+		width: 50rem;
+	}
+}
+
+.glass{
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	padding: 0.5em 5em ;
+	backdrop-filter: blur(0.5rem);
+	background-color: var(--main-accent);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav{
+	&--title{
+		font-size: clamp(0.8rem, 0.8vw, 0.8rem);
+		font-weight: 400;
+		text-transform: uppercase;
+		padding: 0.3em 0.5em;
+		background-color: black;
+		width: fit-content;
+		.larger{
+
+			display: block;
+		 }
+	}
+}
+
+.classy{
+	font-size: clamp(2rem, 2vw, 4rem);
+}
+
+
+.slab{
+	aspect-ratio: 1;
+	width: 2.5rem;
+	@extend %center;
+	border-radius: var(--button-border-radius);
+	border: none;
+	color: var(--color);
+	background-color: var(--mid-accent);
+	box-shadow: 0 0 0.1em var(--light-accent) inset;
+	cursor: pointer;
+	transition: 0.2s cubic-bezier(0.93, 0.67, 0.58, 1);
+
+	&-content{
+		@extend %center;
+		transition: 0.2s cubic-bezier(0.93, 0.67, 0.58, 1);
+		scale: 0.9;
+	}
+	&:hover{
+		box-shadow: 0 0 0.25em var(--light-accent) inset;
+		background-color: var(--dark-accent);
+		transition: 0.2s cubic-bezier(0.93, 0.67, 0.58, 1);
+		.slab-content{
+			transition: 0.2s cubic-bezier(0.93, 0.67, 0.58, 1);
+			scale: 1;
+		}
+	}
+	&:active{
+		scale: 0.9;
+		transition: 0.25s cubic-bezier(0.93, 0.67, 0.58, 1);
+		box-shadow: 0 0 0 var(--light-accent) inset;
+
+		.slab-content{
+			transition: 0.25s cubic-bezier(0.93, 0.67, 0.58, 1);
+			scale: 1.1;
+		}
+	}
+}
